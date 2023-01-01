@@ -26,8 +26,8 @@ public:
     Exercise(int min = 0, int max = 10);//Constructors with default value
 
     int getOp() const;//Get the op
-    int eval(); //Method that return the result of the exercise
-    std::string toString(); //To string to print the exercise
+    int eval() const; //Method that return the result of the exercise
+    std::string toString() const; //To string to print the exercise
 
 };
 

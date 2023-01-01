@@ -13,19 +13,19 @@ Exercise::Exercise(int min, int max) { //Create the constructor
     }
     leftOperand = minValue + (std::rand() % (maxValue - minValue + 1)); //Random the left operand
     rightOperand = minValue + (std::rand() % (maxValue - minValue + 1));//Random the left operand
-    op = (std::rand() % (2 - 1 + 1)); //Random the op value or plus or minus
-};
+    op = 1+(std::rand() % (2 - 1 + 1)); //Random the op value or plus or minus
+}
 
-int Exercise::eval() { //function that return the eval of the Exercise
-    if (getOp() == 0) {
+int Exercise:: eval() const { //function that return the eval of the Exercise
+    if (getOp() == 1) {
         return leftOperand + rightOperand;
     }
     return leftOperand - rightOperand;
 }
 
-std::string Exercise::toString() {//return the string of the expression
-    std::string str = "";//Create empty String
-    if (op == 0) {
+std::string Exercise::toString() const {//return the string of the expression
+    std::string str;//Create empty String
+    if (op == 1) {
         str = std::to_string(leftOperand) + " + " + std::to_string(rightOperand) + " = "; //add the expression to the str
         return str;
     } else {
